@@ -28,13 +28,26 @@ const Listing = () => {
         <div>
              <SearchIcon/>
             <TextField 
+            type="text" 
+            placeholder="Search here"
+            onChange={e=> {
+                setSearch(e.target.value);
+            }} 
             
             />
-            {listing.map((item)=> {
-                return <p>{item.clientName}</p>;
+            {listing.filter(item => {
+                if (search == "") {
+                    return item;
+                }
+                else if (item.clientName.toLowerCase().includes(search.toLowerCase())){
+                    return item
+                }
+            }).
+            map((item)=> {
+                return (<p>{item.clientName}</p>);
             })}
         </div>
-    )
-}
+    );
+};
 
 export default Listing
