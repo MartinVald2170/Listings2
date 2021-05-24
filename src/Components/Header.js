@@ -11,6 +11,7 @@ import {
   import { FilterList } from "@material-ui/icons";
   
   import React, { useState } from "react";
+  import { Link } from "react-router-dom";
   
   const useStyles = makeStyles(() => ({
     management: {
@@ -104,17 +105,18 @@ import {
             </Grid>
           </Grid>
         </Grid>
-  
+        
         <Grid item sm={2} xs={12}>
-          <Grid container item direction="column" alignItems="center">
-            <Grid item>
-          
-                <Button variant="contained" color="primary" style={{ marginBottom: 8 }}>
-                  <AddIcon />
-                  New Client
-                </Button>
+        <Grid container item direction="column" alignItems="center">
+          <Grid item>
+            <Link to="client">
+              <Button variant="contained" color="primary" style={{ marginBottom: 8 }}>
+                <AddIcon />
+                New Client
+              </Button>
+            </Link>
+          </Grid>
            
-            </Grid>
   
             <Grid item>
               <Button color="primary" variant="outlined">
