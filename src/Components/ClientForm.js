@@ -74,7 +74,6 @@ import {
     const isFormValid = () => {
       const _formErrors = {};
       const phoneRegex = /^[+]?[(]?[0-9]{3}[)]?[-\s.]?[0-9]{3}[-\s.]?[0-9]{4,6}$/;
-      // const emailRegex = /^[a-zA-Z0-9]+@(?:[a-zA-Z0-9]+\.)+[A-Za-z]+$/;
       const emailRegex = /[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+/gm;
   
       // email
@@ -162,16 +161,20 @@ import {
               <Grid item container spacing={3} justify="center">
                 <Grid item sm={10} xs={12} md={8}>
                   <TextField
+                   error
+                   id="outlined-error-helper-text"
+                   label="Error"
+                   helperText="Incorrect entry."
+                   variant="outlined"
                     id="outlined-basic"
                     label="Client Name"
                     variant="outlined"
                     fullWidth
                     required
                     name="clientName"
-                    value={formData.clientName || ""}
                     onChange={handleOnChange}
-                    error={!!formErrors.clientName}
-                    helperText={formErrors.clientName}
+                    
+                    
                   />
                 </Grid>
               </Grid>
